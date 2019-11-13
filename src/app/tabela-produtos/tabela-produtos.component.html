@@ -1,7 +1,6 @@
-<h2>{{titulo}}</h2>
-
 <label>Preco (Maior que):</label><br/>
 <input type="number" [(ngModel)]="preco"><br/>
+
 
 <table>
     <tr>
@@ -19,8 +18,8 @@
         <td>{{prod.preco | moeda}}</td>
         <td>{{prod.dataValidade | date:'dd/MM/yyyy'}}</td>
         <td><a [routerLink]="'/edit/'+prod.id">Editar</a></td>
-        <td><a [routerLink]="" (click)="deletar(prod.id)">Excluir</a> </td>    
+        <td><a [routerLink]="" (click)="deletar(prod.id)">Excluir</a> </td>
     </tr>
 </table>
 
-<a routerLink="/novo">Novo Produto</a>
+<button class="btn btn-outline-success my-2 my-sm-0" routerLink="/novo">Novo Produto</button>
