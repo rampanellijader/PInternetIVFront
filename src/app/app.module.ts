@@ -8,6 +8,7 @@ import { ProdutoService } from './produto.service';
 import { MoedaPipe } from './moeda.pipe';
 import { FiltroPrecoPipe } from './filtro-preco.pipe';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [ProdutoService],
   bootstrap: [AppComponent]

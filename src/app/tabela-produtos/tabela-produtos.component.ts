@@ -1,6 +1,7 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { Produto } from '../produto';
 import { ProdutoService } from '../produto.service';
+import { ProdutoApiService } from '../ProdutoApiService';
 
 @Component({
   selector: 'app-tabela-produtos',
@@ -13,20 +14,31 @@ export class TabelaProdutosComponent implements OnInit,OnChanges {
   produtos: Produto[] = [];
 
 
-  constructor(private produtoService: ProdutoService) { }
+  constructor(
+    //private produtoService: ProdutoService
+    private produtoApiService: ProdutoApiService
+    ) { }
 
   ngOnInit() {
-    this.produtos = this.produtoService.listar();
+    //this.produtos = this.produtoService.listar()
+    this.produtoApiService.listar().subscribe(
+      data => this.produtos = data,
+      error => alert("Error" +error)
+    )
+    ;
   }
 
   ngOnChanges(){
     console.log("Atualizando lista");
-    this.produtos = this.produtoService.listar();
+    this.produtoApiService.listar().subscribe(
+      data => this.produtos = data,
+      error => alert("Error" +error)
+    );
   }
 
-  deletar(id: number){
+  /*deletar(id: number){
     this.produtoService.deletar(id);
   }
-
+*/
 
 }
