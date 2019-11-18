@@ -27,6 +27,14 @@ listar(): Observable<Produto[]> {
 
 }
 
+adicionar(produto: Produto): Observable<Produto>{
+  return this.http.post<Produto>(apiUrl,produto,httpOptions).pipe(
+    tap(prod => console.log(prod)),
+    catchError(this.handleError('Adicionar Produto',null))
+  )
+
+}
+
 
 
 private handleError<T> (operation = 'operation', result?: T) {
