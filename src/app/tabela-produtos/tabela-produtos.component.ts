@@ -2,6 +2,7 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 import { Produto } from '../produto';
 import { ProdutoService } from '../produto.service';
 import { ProdutoApiService } from '../ProdutoApiService';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tabela-produtos',
@@ -16,29 +17,39 @@ export class TabelaProdutosComponent implements OnInit,OnChanges {
 
   constructor(
     //private produtoService: ProdutoService
-    private produtoApiService: ProdutoApiService
+    private produtoApiService: ProdutoApiService,
+    private router: Router
     ) { }
 
   ngOnInit() {
     //this.produtos = this.produtoService.listar()
-    this.produtoApiService.listar().subscribe(
-      data => this.produtos = data,
-      error => alert("Error" +error)
-    )
+    this.listar();
     ;
   }
 
   ngOnChanges(){
     console.log("Atualizando lista");
+    this.listar();
+  }
+
+
+  listar(){
     this.produtoApiService.listar().subscribe(
       data => this.produtos = data,
-      error => alert("Error" +error)
+      error => alert("Error "+error)
     );
   }
 
   /*deletar(id: number){
-    this.produtoService.deletar(id);
+    //this.produtoService.deletar(id);
+    this.produtoApiService.deletar(id).subscribe(res => {
+      console.log(res);      
+      this.router.navigate(['/tabela']);
+
+    }, err => { 
+      console.error("Erro: "+err);
+    });
   }
-*/
+  */
 
 }

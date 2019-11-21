@@ -35,7 +35,26 @@ adicionar(produto: Produto): Observable<Produto>{
 
 }
 
+buscarPorId(id: number): Observable<Produto> {
+  const url = `${apiUrl}/${id}`;
+  return this.http.get<Produto>(url).pipe(
+    tap(_ => console.log(`buscarPorId Produto id=${id}`)),
+    catchError(this.handleError<Produto>(`buscarPorId id=${id}`))
+  );
+}
 
+  
+deletar (id) {
+  const url = `${apiUrl}/${id}`;
+  return this.http.delete(url);
+  
+}
+
+
+editar (id, produto): Observable<any> {
+  const url = `${apiUrl}/${id}`;
+  return this.http.put(url, produto, httpOptions);
+}
 
 private handleError<T> (operation = 'operation', result?: T) {
   return (error: any): Observable<T> => {
