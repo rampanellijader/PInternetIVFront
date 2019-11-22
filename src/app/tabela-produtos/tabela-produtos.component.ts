@@ -40,16 +40,17 @@ export class TabelaProdutosComponent implements OnInit,OnChanges {
     );
   }
 
-  /*deletar(id: number){
+  deletar(id: number){
     //this.produtoService.deletar(id);
     this.produtoApiService.deletar(id).subscribe(res => {
       console.log(res);      
       this.router.navigate(['/tabela']);
+      this.listar();
 
     }, err => { 
       console.error("Erro: "+err);
     });
   }
-  */
+  
 
 }

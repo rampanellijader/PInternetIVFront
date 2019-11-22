@@ -46,8 +46,7 @@ buscarPorId(id: number): Observable<Produto> {
   
 deletar (id) {
   const url = `${apiUrl}/${id}`;
-  return this.http.delete(url);
-  
+    return this.http.delete(url);
 }
 
 
