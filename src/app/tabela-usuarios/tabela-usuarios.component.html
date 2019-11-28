@@ -3,12 +3,12 @@
         <th>NOME</th>
         <th>E-mail</th>
     </tr>
-    <tr *ngFor='let user of (usuarios)'>
-        <td>{{prod.nome}}</td>
-        <td>{{prod.email }}</td>
-        <td><button [routerLink]="'/editUser/'+user._id">Editar</button></td>
+    <tr *ngFor='let user of usuarios'>
+        <td>{{ user.nome }}</td>
+        <td>{{ user.email }}</td>
+        <td><button [routerLink]="'/editUsuario/'+user._id">Editar</button></td>
         <td><button [routerLink]="'/tabelaUsuario'" (click)="deletar(user._id)">Excluir</button> </td>
     </tr>
 </table>
 
-<button class="btn btn-outline-success my-2 my-sm-0" routerLink="/novoUser">Novo Usuario</button>
+<button class="btn btn-outline-success my-2 my-sm-0" routerLink="/novoUsuario">Novo Usuario</button>

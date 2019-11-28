@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
-import { Produto } from './produto';
+import { Produto } from "./Produto";
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -43,7 +43,6 @@ buscarPorId(id: number): Observable<Produto> {
   );
 }
 
-  
 deletar (id) {
   const url = `${apiUrl}/${id}`;
     return this.http.delete(url);

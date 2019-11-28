@@ -1,3 +1,5 @@
+import { FormUsuariosComponent } from './form-usuarios/form-usuarios.component';
+import { TabelaUsuariosComponent } from './tabela-usuarios/tabela-usuarios.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes }  from '@angular/router';
@@ -8,7 +10,12 @@ const appRoutes: Routes = [
   { path: "tabela", component: TabelaProdutosComponent },
   { path: "novo", component: FormProdutosComponent },
   { path: "edit/:id", component: FormProdutosComponent},
-  { path: "", redirectTo:"/tabela", pathMatch:'full' }
+  { path: "", redirectTo:"/tabela", pathMatch:'full' },
+
+
+  { path: "tabelaUsuario", component: TabelaUsuariosComponent },
+  { path: "editUsuario/:id", component: FormUsuariosComponent },
+  { path: "novoUsuario", component: FormUsuariosComponent }
 ];
 
 @NgModule({

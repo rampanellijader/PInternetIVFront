@@ -12,6 +12,8 @@ export class FormUsuariosComponent implements OnInit {
  titulo = 'Formulário de Usuarios';
  usuario = new Usuario();
  id: number;
+
+
   constructor(private apiService: UsuarioApiService,
     private route: ActivatedRoute,
     private router: Router

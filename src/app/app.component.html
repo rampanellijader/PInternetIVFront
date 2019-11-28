@@ -13,16 +13,16 @@
         <a class="nav-link" routerLink="/novo">Novo Produto</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/novoUser">Novo Usuário</a>
+        <a class="nav-link" routerLink="/novoUsuario">Novo Usuário</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link"  routerLink="/tabelaUser">Usuários</a>
+        <a class="nav-link"  routerLink="/tabelaUsuario">Usuários</a>
       </li>
 
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" type="number" [(ngModel)]="preco">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="search" >Pesquisar</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="search"  (click)="preco">Pesquisar</button>
     </form>
   </div>
 </nav>

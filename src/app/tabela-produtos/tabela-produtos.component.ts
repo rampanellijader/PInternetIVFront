@@ -1,5 +1,5 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
-import { Produto } from '../produto';
+import { Produto } from "../Produto";
 import { ProdutoService } from '../produto.service';
 import { ProdutoApiService } from '../ProdutoApiService';
 import { Router } from '@angular/router';
@@ -24,7 +24,7 @@ export class TabelaProdutosComponent implements OnInit,OnChanges {
   ngOnInit() {
     //this.produtos = this.produtoService.listar()
     this.listar();
-    
+
   }
 
   ngOnChanges(){
@@ -43,14 +43,14 @@ export class TabelaProdutosComponent implements OnInit,OnChanges {
   deletar(id: number){
     //this.produtoService.deletar(id);
     this.produtoApiService.deletar(id).subscribe(res => {
-      console.log(res);      
+      console.log(res);
       this.router.navigate(['/tabela']);
       this.listar();
 
-    }, err => { 
+    }, err => {
       console.error("Erro: "+err);
     });
   }
-  
+
 
 }
