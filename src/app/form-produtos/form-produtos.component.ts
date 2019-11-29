@@ -50,7 +50,7 @@ export class FormProdutosComponent implements OnInit {
     else {
       // this.service.adicionar(this.produto);
       this.apiService.adicionar(this.produto).subscribe(res => {
-        alert(this.produto.nome + "Cadastrado com sucesso!");
+        alert(this.produto.nome + " Cadastrado com sucesso!");
         this.router.navigate(['/tabela'])
       }, err => {
         alert("Erro" + err);

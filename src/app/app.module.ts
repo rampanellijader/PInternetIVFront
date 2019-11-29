@@ -9,6 +9,8 @@ import { MoedaPipe } from './moeda.pipe';
 import { FiltroPrecoPipe } from './filtro-preco.pipe';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FormUsuariosComponent } from './form-usuarios/form-usuarios.component';
+import { TabelaUsuariosComponent } from './tabela-usuarios/tabela-usuarios.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
     TabelaProdutosComponent,
     FormProdutosComponent,
     MoedaPipe,
-    FiltroPrecoPipe
+    FiltroPrecoPipe,
+    FormUsuariosComponent,
+    TabelaUsuariosComponent
   ],
   imports: [
     BrowserModule,

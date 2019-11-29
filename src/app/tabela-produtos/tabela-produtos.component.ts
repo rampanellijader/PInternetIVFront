@@ -24,7 +24,7 @@ export class TabelaProdutosComponent implements OnInit,OnChanges {
   ngOnInit() {
     //this.produtos = this.produtoService.listar()
     this.listar();
-    ;
+    
   }
 
   ngOnChanges(){
