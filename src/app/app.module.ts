@@ -1,3 +1,4 @@
+import { AuthService } from './login/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
@@ -11,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormUsuariosComponent } from './form-usuarios/form-usuarios.component';
 import { TabelaUsuariosComponent } from './tabela-usuarios/tabela-usuarios.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,15 +22,17 @@ import { TabelaUsuariosComponent } from './tabela-usuarios/tabela-usuarios.compo
     MoedaPipe,
     FiltroPrecoPipe,
     FormUsuariosComponent,
-    TabelaUsuariosComponent
+    TabelaUsuariosComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule,
+    HttpClientModule
+
   ],
-  providers: [ProdutoService],
+  providers: [ProdutoService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

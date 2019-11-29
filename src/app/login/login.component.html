@@ -1,0 +1,9 @@
+<h2>{{titulo}}</h2>
+
+<label>Nome:</label><br/>
+<input type="text" [(ngModel)]="usuario.nome"><br/>
+<label>Email:</label><br/>
+<input type="text" [(ngModel)]="usuario.email"><br/>
+<label>Senha:</label><br/>
+<input type="password" [(ngModel)]="usuario.senha"><br/>
+<button (click)="fazerLogin()">Entrar</button>
