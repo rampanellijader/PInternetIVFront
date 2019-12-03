@@ -43,20 +43,32 @@ buscarPorId(id:number): Observable<Usuario> {
 deletar (id) {
     const url = `${apiUrl}/${id}`;
       return this.http.delete(url);
+
   }
-  
+
 
   editar (id, usuario): Observable<any> {
     const url = `${apiUrl}/${id}`;
     return this.http.put(url, usuario, httpOptions);
   }
 
+ /* procurarNome(nome: string): Observable<Usuario[]>{
+    if(!nome.trim()) {
+      return of([]);
+    }
+
+    return this.http.get<Usuario[]>(`${this.apiUrl}/?nome=${nome}`).pipe(
+      tap(_ => this.log(`Usuarios encontrados ${nome}`)),
+      catchError(this.handleError<Usuario[]>(`procurarNome`))
+    );
+  }
+*/
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-  
+
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead
-  
+
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };

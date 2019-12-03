@@ -48,6 +48,14 @@ deletar (id) {
     return this.http.delete(url);
 }
 
+buscarPorNome(nome: string): Observable<Produto> {
+  const url = `${apiUrl}/${nome}`;
+  return this.http.get<Produto>(url).pipe(
+    tap(_ => console.log(`buscarPorNome Produto nome=${nome}`)),
+    catchError(this.handleError<Produto>(`buscarPorNome nome=${nome}`))
+  );
+}
+
 
 editar (id, produto): Observable<any> {
   const url = `${apiUrl}/${id}`;

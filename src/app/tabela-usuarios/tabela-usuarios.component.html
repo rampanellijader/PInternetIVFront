@@ -4,8 +4,8 @@
         <th>E-mail</th>
     </tr>
     <tr *ngFor='let user of usuarios'>
-        <td>{{ user.nome }}</td>
-        <td>{{ user.email }}</td>
+        <td>{{ user.nome | uppercase }}</td>
+        <td>{{ user.email  | uppercase}}</td>
         <td><button [routerLink]="'/editUsuario/'+user._id">Editar</button></td>
         <td><button [routerLink]="'/tabelaUsuario'" (click)="deletar(user._id)">Excluir</button> </td>
     </tr>

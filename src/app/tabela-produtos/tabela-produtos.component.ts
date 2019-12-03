@@ -14,6 +14,8 @@ export class TabelaProdutosComponent implements OnInit,OnChanges {
   preco: number;
   produtos: Produto[] = [];
 
+  nome: string;
+
 
   constructor(
     //private produtoService: ProdutoService
@@ -49,6 +51,17 @@ export class TabelaProdutosComponent implements OnInit,OnChanges {
 
     }, err => {
       console.error("Erro: "+err);
+    });
+
+  }
+
+  buscarPorNome(nome: string){
+    this.produtoApiService.buscarPorNome(nome).subscribe(res => {
+      console.log(res);
+      this.router.navigate(['/tabela']);
+      this.listar();
+    }, err => {
+      console.error("Erro1:" +err);
     });
   }
 

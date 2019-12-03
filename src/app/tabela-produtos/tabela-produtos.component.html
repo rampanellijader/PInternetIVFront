@@ -1,5 +1,7 @@
-<label>Preco (Maior que):</label><br/>
+<label>Preco (Maior que):  </label>
 <input type="number" [(ngModel)]="preco"><br/>
+<input type="string" [(ngModel)]="nome"><br/>
+
 
 
 <table>
@@ -10,7 +12,7 @@
         <th>VALIDADE</th>
     </tr>
     <tr *ngFor='let prod of (produtos|filtroPreco:preco)'>
-        <td>{{prod.nome}}</td>
+        <td>{{prod.nome | uppercase}}</td>
         <td>{{prod.marca | uppercase}}</td>
         <!-- <td>{{prod.preco | currency:'BRL'}}</td> -->
         <td>{{prod.preco | moeda}}</td>

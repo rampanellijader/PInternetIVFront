@@ -20,4 +20,5 @@ export class AppComponent {
       mostrar => this.mostrarMenu = mostrar
     );
   }
+
 }

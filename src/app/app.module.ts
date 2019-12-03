@@ -1,3 +1,7 @@
+import { AuthGuard } from './guards/auth.guard';
+
+import { UsuarioApiService } from './UsuarioApiService';
+import { AlertService } from './login/alert.service';
 import { AuthService } from './login/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -13,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormUsuariosComponent } from './form-usuarios/form-usuarios.component';
 import { TabelaUsuariosComponent } from './tabela-usuarios/tabela-usuarios.component';
 import { LoginComponent } from './login/login.component';
+import { FiltroProdutoPipe } from './filtro-produto/filtro-produto.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +28,8 @@ import { LoginComponent } from './login/login.component';
     FiltroPrecoPipe,
     FormUsuariosComponent,
     TabelaUsuariosComponent,
-    LoginComponent
+    LoginComponent,
+    FiltroProdutoPipe
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,7 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule
 
   ],
-  providers: [ProdutoService, AuthService],
+  providers: [ProdutoService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
